@@ -49,16 +49,16 @@ For the second in-class exercise, what happens if we change the parameter L (ass
 For the third in-class exercise, explore the relationship between run time and size of locus (e.g. number of SNPs). Is the relationship quadratic? Linear? How is it affected by the number of causal signals present? Hint: use the following code in R to measure the time of running a piece of code:  
 
 ```
-start <- proc.time()
-run_code_here()
-proc.time() - start
+> start <- proc.time()
+> run_code_here()
+> proc.time() - start
 ```
 
 For the fourth in-class exercise, how does SuSiE perform when the 3 causal variants are missing? How many credible sets? What is different than when all causal variants were present?
 ```
-w <- which(b != 0) #403 653 773
-X_miss <- X_std[,-w]
-fitted <- susie(X_miss, Y[,1],L = 10,verbose = TRUE)
+> w <- which(b != 0) #403 653 773
+> X_miss <- X_std[,-w]
+> fitted <- susie(X_miss, Y[,1],L = 10,verbose = TRUE)
 ```
 
 Follow-up question: what could account for the difference in fine-mapping results using X_std vs X_miss? Hint: think about LD.   
